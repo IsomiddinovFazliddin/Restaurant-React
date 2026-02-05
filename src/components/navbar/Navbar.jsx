@@ -10,6 +10,7 @@ const Navbar = ({ setModal, cartCount }) => {
       <nav>
         <div className="container">
           <ul>
+            
             <Link>Welcome</Link>
             <NavLink to={"/"}>Our Menu</NavLink>
             <NavLink to={"/productdetail"}>Product</NavLink>

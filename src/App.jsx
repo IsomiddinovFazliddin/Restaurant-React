@@ -12,7 +12,14 @@ const App = () => {
   const [postdata, setPostdata] = useState([]);
 
   const [modal, setModal] = useState(false);
-  const [modalProduct, setModalProduct] = useState([]);
+  const [modalProduct, setModalProduct] = useState(() => {
+    try {
+      const saved = localStorage.getItem("modalProduct");
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
 
   const getData = async (link) => {
     const req = await fetch(link);
@@ -24,7 +31,13 @@ const App = () => {
     getData(api);
   }, []);
 
-  const addModal = (product) => [setModalProduct((item) => [...item, product])];
+  useEffect(() => {
+    localStorage.setItem("modalProduct", JSON.stringify(modalProduct));
+  }, [modalProduct]);
+
+  const addModal = (product) => {
+    setModalProduct((item) => [...item, product]);
+  };
 
   return (
     <>

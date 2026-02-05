@@ -82,4 +82,10 @@
       cursor: pointer;
     }
   }
+  .emptyImg {
+    width: 100%;
+    height: 90%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
 }

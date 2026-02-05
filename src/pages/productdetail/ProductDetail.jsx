@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductDetail.scss";
 import { HiCheckBadge } from "react-icons/hi2";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,6 +12,11 @@ const ProductDetail = ({ postdata }) => {
   console.log(filterData);
 
   const navigate = useNavigate();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 
   return (
     <>

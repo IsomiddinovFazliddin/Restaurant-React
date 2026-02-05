@@ -6,6 +6,11 @@ import { NavLink } from "react-router-dom";
 const Homepage = ({ postdata, addModal }) => {
   const [visibleProduct, setVisibleProduct] = useState(6);
 
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+
   return (
     <>
       <div className="hero">
@@ -86,9 +91,11 @@ const Homepage = ({ postdata, addModal }) => {
                       <NavLink to={`/productdetail/${item.id}`}>
                         Batafsil
                       </NavLink>
-                      <button onClick={() => {
-                        addModal(item)
-                      }}>
+                      <button
+                        onClick={() => {
+                          addModal(item);
+                        }}
+                      >
                         <RiShoppingCart2Line />
                       </button>
                     </div>
